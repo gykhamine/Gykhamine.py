@@ -1,0 +1,41 @@
+Comment utiliser ce fichier :
+
+    Assurez-vous d'avoir Python installé.
+
+    Installez customtkinter : Ouvrez votre terminal ou invite de commande et exécutez :
+    Bash
+
+pip install customtkinter
+
+Créez le fichier : Copiez le code ci-dessus et collez-le dans un nouveau fichier que vous nommerez blockchain_gui.py.
+
+Exécutez le fichier : Ouvrez votre terminal ou invite de commande, naviguez jusqu'au répertoire où vous avez enregistré le fichier et exécutez :
+Bash
+
+    python blockchain_gui.py
+
+Fonctionnalités de l'interface graphique :
+
+    Ajout de Transactions : Entrez un expéditeur, un destinataire et un montant, puis cliquez sur "Ajouter Transaction". La transaction sera ajoutée à une liste de transactions en attente.
+
+    Minage de Blocs : Cliquez sur "Miner un nouveau Bloc". Si des transactions sont en attente, un nouveau bloc sera créé, le "Proof of Work" sera effectué (ce qui peut prendre quelques secondes en fonction de la difficulty), et le bloc sera ajouté à la chaîne. Les transactions en attente seront alors vidées.
+
+    Vérification de l'Intégrité : Cliquez sur "Vérifier l'Intégrité de la Chaîne" pour vous assurer que tous les hachages et les liens entre les blocs sont corrects, simulant ainsi la sécurité de la blockchain.
+
+    Affichage de la Blockchain : La zone de texte principale met à jour dynamiquement l'état de la chaîne, affichant tous les blocs minés et les transactions qu'ils contiennent, ainsi que les transactions encore en attente.
+
+Points importants et améliorations possibles :
+
+    Minage en Arrière-Plan : Pour une application plus fluide, le processus de proof_of_work (minage) devrait être exécuté dans un thread séparé ou via asyncio. Dans cet exemple, le minage est bloquant, ce qui signifie que l'interface utilisateur gèlera pendant le calcul du nonce.
+
+    Persistance des Données : Actuellement, la blockchain est volatile. Chaque fois que vous fermez et rouvrez l'application, la blockchain est réinitialisée. Pour une persistance, vous devrez sauvegarder la chaîne (par exemple, dans un fichier JSON ou une base de données légère comme SQLite) et la charger au démarrage.
+
+    Réseau P2P : C'est une implémentation locale d'une blockchain. Une "vraie" blockchain est un réseau distribué. Cela impliquerait de la gestion de sockets, la découverte de nœuds, la synchronisation des chaînes entre pairs, et la résolution des conflits de chaînes. C'est la partie la plus complexe et n'est pas incluse dans cet exemple graphique simple.
+
+    Gestion des Erreurs : Les entrées utilisateur sont basiques. Des validations plus robustes (par exemple, montants numériques uniquement) seraient nécessaires.
+
+    Signature de Transactions : Pour une sécurité réelle, les transactions devraient être signées cryptographiquement par l'expéditeur à l'aide de clés privées, et cette signature devrait être vérifiée avant d'ajouter la transaction au bloc.
+
+    Récompense de Minage : Dans les blockchains réelles, les mineurs sont récompensés pour leur travail (souvent avec de nouvelles "pièces" ou des frais de transaction). Cette logique n'est pas incluse ici.
+
+Ce fichier vous donne une base solide pour visualiser et comprendre les principes fondamentaux d'une blockchain à travers une interface utilisateur conviviale !
